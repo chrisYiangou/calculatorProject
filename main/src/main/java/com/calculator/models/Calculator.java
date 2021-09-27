@@ -58,12 +58,18 @@ public class Calculator {
 	}
 
 
-	public List<Double> getSumList() {
-		return sumList;
-	}
-
+	//Constructors
 	public Calculator(List<Double> sumList) {
 		this.sumList = sumList;
+	}
+
+	public Calculator() {
+
+	}
+
+	//To recieve the list
+	public List<Double> getSumList() {
+		return sumList;
 	}
 
 
