@@ -1,6 +1,7 @@
 package com.calculator.models;
 
-import java.io.Console;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
@@ -10,13 +11,17 @@ public class Calculator {
      * the most basic template
      */
 
-    public static double calculate() {
+	List<Double> sumList = new ArrayList<>();
+
+	public double calculate() {
 
         Scanner scan;
-		scan = new Scanner(System.in);
-		String choice = " ";
 		double sum = 0;
+		String choice = " ";
 
+		scan = new Scanner(System.in);
+
+		
 		System.out.println("Please enter your first number");
 		double input1 = scan.nextDouble();
 		System.out.println("Please enter your second number");
@@ -24,7 +29,6 @@ public class Calculator {
 
 		
 		System.out.println("Choose to add/subtract/divide/multiply these numbers");
-		
 		
 		while (choice.equals(" ")) {
 
@@ -48,29 +52,42 @@ public class Calculator {
 				choice = " ";
 			}
 		}
+		scan.close();
+		sumList.add(sum);
 		return sum;
 	}
 
+
+	public List<Double> getSumList() {
+		return sumList;
+	}
+
+	public Calculator(List<Double> sumList) {
+		this.sumList = sumList;
+	}
+
+
+	// Fundamental basic methods below
     
 
-    public int addTwoNumbers(int input1, int input2) {
-        int sumOfInput = input1 + input2;
-        return sumOfInput;
-    }
+    // public int addTwoNumbers(int input1, int input2) {
+    //     int sumOfInput = input1 + input2;
+    //     return sumOfInput;
+    // }
 
-    public int subtractTwoNumbers(int input1, int input2) {
-        int sumOfInput = input1 - input2;
-        return sumOfInput;
-    }
+    // public int subtractTwoNumbers(int input1, int input2) {
+    //     int sumOfInput = input1 - input2;
+    //     return sumOfInput;
+    // }
 
-    public int divideTwoNumbers(int input1, int input2) {
-        int sumOfInput = input1 / input2;
-        return sumOfInput;
-    }
+    // public int divideTwoNumbers(int input1, int input2) {
+    //     int sumOfInput = input1 / input2;
+    //     return sumOfInput;
+    // }
 
-    public int multiplyTwoNumbers(int input1, int input2) {
-        int sumOfInput = input1 * input2;
-        return sumOfInput;
+    // public int multiplyTwoNumbers(int input1, int input2) {
+    //     int sumOfInput = input1 * input2;
+    //     return sumOfInput;
 
-    }
+    // }
 }
