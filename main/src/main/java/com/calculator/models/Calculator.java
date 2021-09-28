@@ -1,6 +1,7 @@
 package com.calculator.models;
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Calculator {
 	 * the most basic template
 	 */
 
-	List<Double> sumList = new ArrayList<Double>();
+	List<Double> sumList = new ArrayList<>();
 
 	@SuppressWarnings("resource")
 	public double calculate() {
@@ -64,7 +65,7 @@ public class Calculator {
 
 		Scanner scan;
 		double sum = 0;
-		String choice = " ";
+		String choice;
 
 		scan = new Scanner(System.in);
 		System.out.println("Do you want to continue using sum for additional Math Y/N");
@@ -78,7 +79,7 @@ public class Calculator {
 
 			System.out.println("Choose to add/subtract/divide/multiply these numbers");
 
-			while (choice.equals("Y".toLowerCase())) {
+			while (choice.equalsIgnoreCase("Y")) {
 
 				choice = scan.nextLine();
 
@@ -101,13 +102,16 @@ public class Calculator {
 					choice = "Y".toLowerCase();
 				}
 			}
-		} else if (choice.equals("N".toLowerCase())) {
+		} else if (choice.equalsIgnoreCase("N")) {
 			System.out.println("No problem");
 		}
 		
 		scan.close();
 		if (sum != sumList.get(sumList.size() - 1)) {
 			sumList.add(sum);
+			System.out.println("Sum added to Sum List");
+		} else {
+			System.out.println("Sum is idential to last Sum, not adding to Sum List");
 		}
 		return sum;
 
@@ -150,3 +154,4 @@ public class Calculator {
 
 	// }
 }
+
