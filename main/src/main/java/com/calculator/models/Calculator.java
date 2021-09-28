@@ -64,14 +64,14 @@ public class Calculator {
 	public double continueWithSum() {
 
 		Scanner scan;
-		double sum = 0;
+		double sum = sumList.get(sumList.size() - 1);
 		String choice;
 
 		scan = new Scanner(System.in);
 		System.out.println("Do you want to continue using sum for additional Math Y/N");
 		choice = scan.nextLine();
 			
-		if (choice.equals("Y".toLowerCase())) {
+		if (choice.equalsIgnoreCase("y")) {
 
 			double lastSum = sumList.get(sumList.size() - 1);
 			System.out.println("Please enter your first number");
@@ -79,7 +79,7 @@ public class Calculator {
 
 			System.out.println("Choose to add/subtract/divide/multiply these numbers");
 
-			while (choice.equalsIgnoreCase("Y")) {
+			while (choice.equalsIgnoreCase("y")) {
 
 				choice = scan.nextLine();
 
@@ -102,7 +102,7 @@ public class Calculator {
 					choice = "Y".toLowerCase();
 				}
 			}
-		} else if (choice.equalsIgnoreCase("N")) {
+		} else if (choice.equalsIgnoreCase("n")) {
 			System.out.println("No problem");
 		}
 		
@@ -118,17 +118,25 @@ public class Calculator {
 	}
 
 	// Constructors
-	public Calculator(List<Double> sumList) {
-		this.sumList = sumList;
-	}
-
 	public Calculator() {
 
 	}
 
 	// To receive the list
 	public List<Double> getSumList() {
+		System.out.println("Your recent sum results: " + sumList);
 		return sumList;
+		
+		}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Your Sum List contains: [").append(getSumList()).append("]");
+		return builder.toString();
+	}
+	
+	
 	}
 
 	// Fundamental basic methods below
@@ -153,5 +161,3 @@ public class Calculator {
 	// return sumOfInput;
 
 	// }
-}
-
