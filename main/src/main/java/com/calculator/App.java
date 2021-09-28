@@ -17,5 +17,6 @@ public final class App {
         Calculator calc = new Calculator();
         calc.calculate();
         calc.continueWithSum(); 
+        calc.getSumList();
     }
 }
