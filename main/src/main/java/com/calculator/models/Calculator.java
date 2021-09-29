@@ -1,7 +1,3 @@
-package com.calculator.models;
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,7 +9,7 @@ public class Calculator {
 	 * the most basic template
 	 */
 
-	List<Double> sumList = new ArrayList<>();
+	List<Double> sumList = new ArrayList<Double>();
 
 	@SuppressWarnings("resource")
 	public double calculate() {
@@ -65,12 +61,15 @@ public class Calculator {
 
 		Scanner scan;
 		double sum = sumList.get(sumList.size() - 1);
-		String choice;
+		String choice = " ";
 
 		scan = new Scanner(System.in);
 		System.out.println("Do you want to continue using sum for additional Math Y/N");
+		
+		while (choice.equals(" ")) {
+		
 		choice = scan.nextLine();
-			
+		
 		if (choice.equalsIgnoreCase("y")) {
 
 			double lastSum = sumList.get(sumList.size() - 1);
@@ -104,7 +103,12 @@ public class Calculator {
 			}
 		} else if (choice.equalsIgnoreCase("n")) {
 			System.out.println("No problem");
+		}  else {
+			System.out.println("Please enter Y or N");
+			choice = " ";
 		}
+		}
+		
 		
 		scan.close();
 		if (sum != sumList.get(sumList.size() - 1)) {
@@ -124,11 +128,12 @@ public class Calculator {
 
 	// To receive the list
 	public List<Double> getSumList() {
-		System.out.println("Your recent sum results: " + sumList);
 		return sumList;
 		
 		}
 
+	
+	// toString used the get method above and formats the sumList in a more preventable way
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -161,3 +166,4 @@ public class Calculator {
 	// return sumOfInput;
 
 	// }
+
