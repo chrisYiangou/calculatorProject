@@ -1,3 +1,5 @@
+package com.calculator.models;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -122,7 +124,7 @@ public class Calculator {
 	}
 
 	// Constructors
-	public Calculator() {
+	public Calculator() throws UnsupportedOperationException {
 
 	}
 
