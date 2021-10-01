@@ -125,8 +125,8 @@ public class Calculator {
 
 	// Constructors
 	public Calculator() throws UnsupportedOperationException {
-
-	}
+   // TODO document why this constructor is empty
+ }
 
 	// To receive the list
 	public List<Double> getSumList() {

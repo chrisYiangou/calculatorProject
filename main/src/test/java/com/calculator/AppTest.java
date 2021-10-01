@@ -11,7 +11,8 @@ class AppTest {
     /**
      * Rigorous Test.
      */
-    @Test
+   
+     @Test
     void testApp() {
         assertEquals(1, 1);
     }
